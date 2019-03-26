@@ -33,7 +33,8 @@ object UrlGroupCount {
 
 
     rdd5.foreach(x => {
-      val  conn: Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+      val  conn: Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?" +
+        "useUnicode=true&characterEncoding=UTF-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
         "root", "")
       val sql = "insert into url_data (xueyuan,number_one) values(?,?)"
       val statement = conn.prepareStatement(sql)
